@@ -320,12 +320,14 @@ func (s *Server) GenerateHandler(c *gin.Context) {
 				ch <- gin.H{"error": err.Error()}
 			}
 
-			currentText := sb.String()
-			if strings.HasSuffix(currentText, "{func}") {
-				slog.Debug("Function call pattern detected", "text", currentText)
+
+
+			// currentText := sb.String()
+			// if strings.HasSuffix(currentText, "{func}") {
+			// 	slog.Debug("Function call pattern detected", "text", currentText)
 				
-				// Call the function
-			}
+			// 	// Call the function
+			// }
 
 			if cr.Done {
 				res.TotalDuration = time.Since(checkpointStart)
